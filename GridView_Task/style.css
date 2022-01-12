@@ -1,0 +1,13 @@
+﻿.hiddenId {
+    display: none;
+}
+.InsertUpdate{
+    width:500px;
+}
+a{
+    text-decoration:none;
+    color:black;
+}
+a:hover{
+    color:brown;
+}
