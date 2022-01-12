@@ -26,8 +26,8 @@
                 </asp:TableCell>
                 <asp:TableCell>
                      <asp:TextBox ID="txtProductName" runat="server" placeholder="Enter the Product Name"></asp:TextBox>
-                     <asp:RequiredFieldValidator ID="rvfProductName" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Product Name is required, cannot be blank" Text="*" ControlToValidate="txtProductName" ForeColor="Red"></asp:RequiredFieldValidator>
-                     <asp:RegularExpressionValidator ID="regexProductName" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Product Name Should Contain Characters and Numbers only or should be greater than 3 and less than or equal 30 Characters" Text="*" ControlToValidate="txtProductName" ValidationExpression="(?!^[0-9]*$)^([0-9a-zA-Z\s]{3,30})$" ForeColor="Red"></asp:RegularExpressionValidator>
+                     <asp:RequiredFieldValidator ID="rvfProductName" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Product Name is required, cannot be blank" Text="*" ControlToValidate="txtProductName" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                     <asp:RegularExpressionValidator ID="regexProductName" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Product Name Should Contain Characters and Numbers only or should be greater than 3 and less than or equal 30 Characters" Text="*" ControlToValidate="txtProductName" ValidationExpression="(?!^[0-9]*$)^([0-9a-zA-Z\s]{3,30})$" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
