@@ -155,27 +155,30 @@ namespace GridView_Task
         {
             try
             {
-                CreateConnection();
-                OpenConnection();
-                sqlCommand.CommandText = "SP_ProductDetails_GridView";
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("@Event", "Add");
-                sqlCommand.Parameters.AddWithValue("@ProductName", Convert.ToString(txtProductName.Text.Trim()));
-                sqlCommand.Parameters.AddWithValue("@QuantityPerUnit", Convert.ToInt32(txtQuantityPerUnit.Text.Trim()));
-                sqlCommand.Parameters.AddWithValue("@UnitPrice", Convert.ToDecimal(txtUnitPrice.Text));
-                sqlCommand.Parameters.AddWithValue("@UnitsInStock", Convert.ToInt32(txtUnitsInStock.Text));
-                int result = Convert.ToInt32(sqlCommand.ExecuteNonQuery());
-                if (result > 0)
+               if(Page.IsValid)
                 {
-                    lblMessage.Text = "Record Inserted Successfully...";
-                    lblMessage.ForeColor = System.Drawing.Color.Green;
-                    BindProductDetails();
-                    //ClearControls();
-                }
-                else
-                {
-                    lblMessage.Text = "Failed!";
-                    lblMessage.ForeColor = System.Drawing.Color.Red;
+                    CreateConnection();
+                    OpenConnection();
+                    sqlCommand.CommandText = "SP_ProductDetails_GridView";
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Event", "Add");
+                    sqlCommand.Parameters.AddWithValue("@ProductName", Convert.ToString(txtProductName.Text.Trim()));
+                    sqlCommand.Parameters.AddWithValue("@QuantityPerUnit", Convert.ToInt32(txtQuantityPerUnit.Text.Trim()));
+                    sqlCommand.Parameters.AddWithValue("@UnitPrice", Convert.ToDecimal(txtUnitPrice.Text));
+                    sqlCommand.Parameters.AddWithValue("@UnitsInStock", Convert.ToInt32(txtUnitsInStock.Text));
+                    int result = Convert.ToInt32(sqlCommand.ExecuteNonQuery());
+                    if (result > 0)
+                    {
+                        lblMessage.Text = "Record Inserted Successfully...";
+                        lblMessage.ForeColor = System.Drawing.Color.Green;
+                        BindProductDetails();
+                        //ClearControls();
+                    }
+                    else
+                    {
+                        lblMessage.Text = "Failed!";
+                        lblMessage.ForeColor = System.Drawing.Color.Red;
+                    }
                 }
             }
             catch (Exception ex)
