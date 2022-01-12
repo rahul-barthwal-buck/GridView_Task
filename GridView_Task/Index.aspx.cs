@@ -329,7 +329,10 @@ namespace GridView_Task
                 sqlCommand.CommandText = "SP_ProductDetails_GridView";
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.AddWithValue("@Event", "Search");
-                sqlCommand.Parameters.AddWithValue("@ProductName", txtSearch.Text.Trim());
+                sqlCommand.Parameters.AddWithValue("@ProductName", Convert.ToString(txtSearch.Text.Trim()));
+                sqlCommand.Parameters.AddWithValue("@QuantityPerUnit", Convert.ToInt32(txtSearch.Text.Trim()));
+                sqlCommand.Parameters.AddWithValue("@UnitPrice", Convert.ToDecimal(txtSearch.Text.Trim()));
+                sqlCommand.Parameters.AddWithValue("@UnitsInStock", Convert.ToInt32(txtSearch.Text.Trim()));
                 sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                 dataSet = new DataSet();
                 sqlDataAdapter.Fill(dataSet);
