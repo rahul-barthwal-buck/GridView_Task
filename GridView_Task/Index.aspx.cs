@@ -228,39 +228,45 @@ namespace GridView_Task
         {
             try
             {
-                CreateConnection();
-                OpenConnection();
-
-                sqlCommand.CommandText = "SP_ProductDetails_GridView";
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("@Event", "Update");
-                sqlCommand.Parameters.AddWithValue("@ProductName", Convert.ToString(txtProductName.Text.Trim()));
-                sqlCommand.Parameters.AddWithValue("@QuantityPerUnit", Convert.ToInt32(txtQuantityPerUnit.Text.Trim()));
-                sqlCommand.Parameters.AddWithValue("@UnitPrice", Convert.ToDecimal(txtUnitPrice.Text));
-                sqlCommand.Parameters.AddWithValue("@UnitsInStock", Convert.ToInt32(txtUnitsInStock.Text));
-                sqlCommand.Parameters.AddWithValue("@ProductId", Convert.ToDecimal(Session["id"]));
-
-                int result = Convert.ToInt32(sqlCommand.ExecuteNonQuery());
-                if (result > 0)
+               if(Page.IsValid)
                 {
-                    lblMessage.Text = "Record Updated Successfully...";
-                    lblMessage.ForeColor = System.Drawing.Color.Green;
-                    GridView1.EditIndex = -1;
-                    BindProductDetails();
-                    ClearControls();
-                    btnReset.CssClass = "btn btn-primary";
-                    btnReset.Text = "Reset";
-                    
+                    CreateConnection();
+                    OpenConnection();
+
+                    sqlCommand.CommandText = "SP_ProductDetails_GridView";
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Event", "Update");
+                    sqlCommand.Parameters.AddWithValue("@ProductName", Convert.ToString(txtProductName.Text.Trim()));
+                    sqlCommand.Parameters.AddWithValue("@QuantityPerUnit", Convert.ToInt32(txtQuantityPerUnit.Text.Trim()));
+                    sqlCommand.Parameters.AddWithValue("@UnitPrice", Convert.ToDecimal(txtUnitPrice.Text));
+                    sqlCommand.Parameters.AddWithValue("@UnitsInStock", Convert.ToInt32(txtUnitsInStock.Text));
+                    sqlCommand.Parameters.AddWithValue("@ProductId", Convert.ToDecimal(Session["id"]));
+
+                    int result = Convert.ToInt32(sqlCommand.ExecuteNonQuery());
+                    if (result > 0)
+                    {
+                        lblMessage.Text = "Record Updated Successfully...";
+                        lblMessage.ForeColor = System.Drawing.Color.Green;
+                        GridView1.EditIndex = -1;
+                        BindProductDetails();
+                        ClearControls();
+                        btnReset.CssClass = "btn btn-primary";
+                        btnReset.Text = "Reset";
+
+                    }
+                    else
+                    {
+                        lblMessage.Text = "Failed!";
+                        lblMessage.ForeColor = System.Drawing.Color.Red;
+                    }
+                    CloseConnection();
+                    DisposeConnection();
                 }
-                else
+               else
                 {
-                    lblMessage.Text = "Failed!";
-                    lblMessage.ForeColor = System.Drawing.Color.Red;
-                    btnReset.CssClass = "btn btn-primary";
-                    btnReset.Text = "Reset";
+                    btnUpdate.Visible = true;
+                    btnInsert.Visible = false;
                 }
-                CloseConnection();
-                DisposeConnection();
             }
             catch (Exception ex)
             {
