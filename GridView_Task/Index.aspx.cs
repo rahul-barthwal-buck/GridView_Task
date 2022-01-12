@@ -170,7 +170,7 @@ namespace GridView_Task
                     lblMessage.Text = "Record Inserted Successfully...";
                     lblMessage.ForeColor = System.Drawing.Color.Green;
                     BindProductDetails();
-                    ClearControls();
+                    //ClearControls();
                 }
                 else
                 {

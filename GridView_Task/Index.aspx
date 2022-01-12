@@ -27,7 +27,7 @@
                 <asp:TableCell>
                      <asp:TextBox ID="txtProductName" runat="server" placeholder="Enter the Product Name"></asp:TextBox>
                      <asp:RequiredFieldValidator ID="rvfProductName" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Product Name is required, cannot be blank" Text="*" ControlToValidate="txtProductName" ForeColor="Red"></asp:RequiredFieldValidator>
-                     <asp:RegularExpressionValidator ID="regexProductName" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Product Name Should Contain Characters and Numbers only or should be greater than 3 and less than or equal 30 Characters" Text="*" ControlToValidate="txtProductName" ValidationExpression="^[0-9a-zA-Z\s]{3,30}$" ForeColor="Red"></asp:RegularExpressionValidator>
+                     <asp:RegularExpressionValidator ID="regexProductName" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Product Name Should Contain Characters and Numbers only or should be greater than 3 and less than or equal 30 Characters" Text="*" ControlToValidate="txtProductName" ValidationExpression="(?!^[0-9]*$)^([0-9a-zA-Z\s]{3,30})$" ForeColor="Red"></asp:RegularExpressionValidator>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -36,8 +36,8 @@
                 </asp:TableCell>
                 <asp:TableCell>
                       <asp:TextBox ID="txtQuantityPerUnit" runat="server" placeholder="Enter Quantity Per Unit"></asp:TextBox>
-                      <asp:RequiredFieldValidator ID="rvfQuantityPerUnit" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Quantity Per Unit is required, cannot be blank" Text="*" ControlToValidate="txtQuantityPerUnit" ForeColor="Red"></asp:RequiredFieldValidator>
-                     <asp:RegularExpressionValidator ID="regexQuantityPerUnit" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Quantity Should be numbers or should be less than or equal to 9 length of numbers" Text="*" ControlToValidate="txtQuantityPerUnit" ValidationExpression="(?!^[0]*$)^([0-9]{0,9})$" ForeColor="Red"></asp:RegularExpressionValidator>
+                      <asp:RequiredFieldValidator ID="rvfQuantityPerUnit" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Quantity Per Unit is required, cannot be blank" Text="*" ControlToValidate="txtQuantityPerUnit" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                     <asp:RegularExpressionValidator ID="regexQuantityPerUnit" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Quantity Should be numbers or should be less than or equal to 9 length of numbers" Text="*" ControlToValidate="txtQuantityPerUnit" ValidationExpression="(?!^[0]*$)^([0-9]{0,9})$" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -46,8 +46,8 @@
                 </asp:TableCell>
                 <asp:TableCell>
                      <asp:TextBox ID="txtUnitPrice" runat="server" placeholder="Enter Unit Price"></asp:TextBox>
-                     <asp:RequiredFieldValidator ID="rvfUnitPrice" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Unit Price is required, cannot be blank" Text="*" ControlToValidate="txtUnitPrice" ForeColor="Red"></asp:RequiredFieldValidator>
-                     <asp:RegularExpressionValidator ID="regexUnitPrice" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Unit Price should be decimal or should maximum 2 decimal place or should be less than or equal to 12 digits total" Text="*" ControlToValidate="txtUnitPrice" ValidationExpression="(?!^[0]*$)^([0-9\.]{2,12})$*" ForeColor="Red"></asp:RegularExpressionValidator>
+                     <asp:RequiredFieldValidator ID="rvfUnitPrice" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Unit Price is required, cannot be blank" Text="*" ControlToValidate="txtUnitPrice" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                     <asp:RegularExpressionValidator ID="regexUnitPrice" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Unit Price should be decimal or should maximum 2 decimal place or should be less than or equal to 12 digits total" Text="*" ControlToValidate="txtUnitPrice" ValidationExpression="(?!^[0]*$)^([0-9\.]{2,12})$*" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -56,8 +56,8 @@
                 </asp:TableCell>
                 <asp:TableCell>
                       <asp:TextBox ID="txtUnitsInStock" runat="server" placeholder="Enter Units In Stock"></asp:TextBox>
-                     <asp:RequiredFieldValidator ID="rvfUnitsInStock" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Units In Stock is required, cannot be blank" Text="*" ControlToValidate="txtUnitsInStock" ForeColor="Red"></asp:RequiredFieldValidator>
-                     <asp:RegularExpressionValidator ID="regexUnitsInStock" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Units In Stock be numbers or should be less than or equal to 9 length of numbers" Text="*" ControlToValidate="txtUnitsInStock" ValidationExpression="(?!^[0]*$)^([0-9]{0,9})$" ForeColor="Red"></asp:RegularExpressionValidator>
+                     <asp:RequiredFieldValidator ID="rvfUnitsInStock" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Units In Stock is required, cannot be blank" Text="*" ControlToValidate="txtUnitsInStock" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                     <asp:RegularExpressionValidator ID="regexUnitsInStock" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Units In Stock be numbers or should be less than or equal to 9 length of numbers" Text="*" ControlToValidate="txtUnitsInStock" ValidationExpression="(?!^[0]*$)^([0-9]{0,9})$" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
