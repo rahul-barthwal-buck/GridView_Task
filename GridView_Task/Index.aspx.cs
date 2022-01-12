@@ -206,6 +206,8 @@ namespace GridView_Task
             txtUnitPrice.Text = ((Label)GridView1.Rows[RowIndex].FindControl("lblUnitPrice")).Text.ToString();
             txtUnitsInStock.Text = ((Label)GridView1.Rows[RowIndex].FindControl("lblUnitsInStock")).Text.ToString();
 
+            btnReset.Text = "Cancel";
+
         }
 
         //This will clear all the fields of form and lblMessage
@@ -215,7 +217,6 @@ namespace GridView_Task
             txtQuantityPerUnit.Text = "";
             txtUnitPrice.Text = "";
             txtUnitsInStock.Text = "";
-            lblMessage.Text = "";
         }
 
         //When user clicks on Update button then below event will peform and update the fields and then Bind the gridview again.
@@ -243,6 +244,7 @@ namespace GridView_Task
                     GridView1.EditIndex = -1;
                     BindProductDetails();
                     ClearControls();
+                    btnReset.Text = "Reset";
                 }
                 else
                 {
@@ -262,6 +264,7 @@ namespace GridView_Task
         protected void btnReset_Click(object sender, EventArgs e)
         {
             ClearControls();
+            btnReset.Text = "Reset";
         }
 
         //This event will perform when user clicks on Delete link Button of a particular row and checking the DataKeyNames property of Gridview and according to DataKeyNames which is set to Product_Id and delete record of that row and Bind the GridView again.
