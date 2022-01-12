@@ -207,6 +207,7 @@ namespace GridView_Task
             txtUnitsInStock.Text = ((Label)GridView1.Rows[RowIndex].FindControl("lblUnitsInStock")).Text.ToString();
 
             btnReset.Text = "Cancel";
+            btnReset.CssClass = "btn btn-danger";
 
         }
 
@@ -244,12 +245,16 @@ namespace GridView_Task
                     GridView1.EditIndex = -1;
                     BindProductDetails();
                     ClearControls();
+                    btnReset.CssClass = "btn btn-primary";
                     btnReset.Text = "Reset";
+                    
                 }
                 else
                 {
                     lblMessage.Text = "Failed!";
                     lblMessage.ForeColor = System.Drawing.Color.Red;
+                    btnReset.CssClass = "btn btn-primary";
+                    btnReset.Text = "Reset";
                 }
                 CloseConnection();
                 DisposeConnection();
@@ -265,6 +270,7 @@ namespace GridView_Task
         {
             ClearControls();
             btnReset.Text = "Reset";
+            btnReset.CssClass = "btn btn-primary";
         }
 
         //This event will perform when user clicks on Delete link Button of a particular row and checking the DataKeyNames property of Gridview and according to DataKeyNames which is set to Product_Id and delete record of that row and Bind the GridView again.
