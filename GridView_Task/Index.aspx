@@ -73,7 +73,7 @@
         <asp:Label ID="lblMessage" ForeColor="Red" runat="server"></asp:Label>
         <br />
         <asp:GridView CssClass="table table-hover table-bordered table-light" ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="5" CellSpacing="5"
-            PageSize="5" OnRowEditing="grid_EditRow" OnRowCancelingEdit="grid_EditCancelRow" OnRowDeleting="grid_DeleteRow" OnPageIndexChanging="grid_PageIndexChanging" OnSorting="grid_Sorting">
+            PageSize="5" OnRowEditing="grid_EditRow"  OnRowDeleting="grid_DeleteRow" OnPageIndexChanging="grid_PageIndexChanging" OnSorting="grid_Sorting"> <%--OnRowCancelingEdit="grid_EditCancelRow"--%>
             <Columns>
                 <asp:TemplateField HeaderText="Product Id" HeaderStyle-CssClass="hiddenId" ItemStyle-CssClass="hiddenId">
                     <ItemTemplate>

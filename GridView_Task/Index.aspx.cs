@@ -185,11 +185,11 @@ namespace GridView_Task
         }
  
         
-        protected void grid_EditCancelRow(object sender, GridViewCancelEditEventArgs e)
-        {
-            GridView1.EditIndex = -1;
-            BindProductDetails();
-        }
+        //protected void grid_EditCancelRow(object sender, GridViewCancelEditEventArgs e)
+        //{
+        //    GridView1.EditIndex = -1;
+        //    BindProductDetails();
+        //}
 
         //When user clicks Edit button in grid then this event set the values of that row in the form for editing the value
         protected void grid_EditRow(object sender, GridViewEditEventArgs e)
