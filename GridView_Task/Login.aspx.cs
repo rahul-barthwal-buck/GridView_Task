@@ -95,9 +95,9 @@ namespace GridView_Task
                         lblMessage.Text = "UserName does not exists!";
                         lblMessage.ForeColor = System.Drawing.Color.Red;
                     }
-                    
+                    DisposeConnection();
                 }
-                DisposeConnection();
+                
             }
             catch (Exception ex)
             {
@@ -114,6 +114,10 @@ namespace GridView_Task
         {
             txtUserName.Text = "";
             txtPassword.Text = "";
+        }
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="GridView_Task.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="GridView_Task.Register" %>
 
 <!DOCTYPE html>
 
@@ -14,21 +14,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <h1 class="display-3 d-flex justify-content-center">Login</h1>
+                    <h1 class="display-3 d-flex justify-content-center">Register</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 col-md-6 col-sm-4">
                     <div class="d-flex justify-content-center">
-                           <asp:Table runat="server" CssClass="table table-borderless LoginTable">
+                           <asp:Table runat="server" CssClass="table table-borderless RegisterTable">
                             <asp:TableRow>
                                <asp:TableCell>
                                    <asp:Label ID="lblUserName" runat="server" Text="User Name"></asp:Label>
                                </asp:TableCell>
                                 <asp:TableCell>
                                     <asp:TextBox ID="txtUserName" runat="server" placeholder="Enter UserName"></asp:TextBox>&nbsp;
-                                     <asp:RequiredFieldValidator ID="rvfUserName" runat="server" ValidationGroup="Login" ErrorMessage="User Name is required, cannot be blank" Text="*" ControlToValidate="txtUserName" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
-                                     <asp:RegularExpressionValidator ID="regexUserName" runat="server" ValidationGroup="Login" ErrorMessage="User Name Should Contain Characters and Numbers only or should be greater than 3 and less than or equal 20 Characters" Text="*" ControlToValidate="txtUserName" ValidationExpression="(?!^[0-9]*$)^([0-9a-zA-Z]{3,20})$" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
+                                     <asp:RequiredFieldValidator ID="rvfUserName" runat="server" ValidationGroup="Register" ErrorMessage="User Name is required, cannot be blank" Text="*" ControlToValidate="txtUserName" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                                     <asp:RegularExpressionValidator ID="regexUserName" runat="server" ValidationGroup="Register" ErrorMessage="User Name Should Contain Characters and Numbers only or should be greater than 3 and less than or equal 20 Characters" Text="*" ControlToValidate="txtUserName" ValidationExpression="(?!^[0-9]*$)^([0-9a-zA-Z]{3,20})$" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
@@ -37,15 +37,15 @@
                                </asp:TableCell>
                                 <asp:TableCell>
                                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Enter Password"></asp:TextBox>&nbsp;
-                                     <asp:RequiredFieldValidator ID="rvfPassword" runat="server" ValidationGroup="Login" ErrorMessage="Password is required, cannot be blank" Text="*" ControlToValidate="txtPassword" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
-                                     <asp:RegularExpressionValidator ID="regexPassword" runat="server" ValidationGroup="Login" ControlToValidate="txtPassword"  ErrorMessage="Password should be minimum of 8 and maximum of 16 characters long and should contain at least one number, atleast one lowercase letter , atleast one uppercase letter" Text="*" ValidationExpression="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,16})$" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
+                                     <asp:RequiredFieldValidator ID="rvfPassword" runat="server" ValidationGroup="Register" ErrorMessage="Password is required, cannot be blank" Text="*" ControlToValidate="txtPassword" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                                     <asp:RegularExpressionValidator ID="regexPassword" runat="server" ValidationGroup="Register" ControlToValidate="txtPassword"  ErrorMessage="Password should be minimum of 8 and maximum of 16 characters long and should contain at least one number, atleast one lowercase letter , atleast one uppercase letter" Text="*" ValidationExpression="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,16})$" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell ColumnSpan="2">
-                                    <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-success" ValidationGroup="Login" OnClick="btnLogin_Click" />&nbsp;
+                                    <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn btn-success" ValidationGroup="Register" OnClick="btnRegister_Click" />&nbsp;
                                     <asp:Button ID="btnReset" runat="server" Text="Reset" CssClass="btn btn-primary" OnClick="btnReset_Click" />&nbsp;
-                                     <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn btn-secondary" OnClick="btnRegister_Click" />
+                                    <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-secondary" OnClick="btnLogin_Click" />&nbsp;
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -55,7 +55,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="d-flex justify-content-center">
-                        <asp:ValidationSummary ID="vsLogin" runat="server"  ValidationGroup="Login" ForeColor="Red" CssClass="alert alert-danger LoginValidation" />
+                        <asp:ValidationSummary ID="vsRegister" runat="server"  ValidationGroup="Register" ForeColor="Red" CssClass="alert alert-danger RegisterValidation" />
                     </div>
                 </div>
             </div>

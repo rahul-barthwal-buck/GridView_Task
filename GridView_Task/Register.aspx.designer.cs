@@ -11,7 +11,7 @@ namespace GridView_Task
 {
 
 
-    public partial class Login
+    public partial class Register
     {
 
         /// <summary>
@@ -96,13 +96,13 @@ namespace GridView_Task
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regexPassword;
 
         /// <summary>
-        /// btnLogin control.
+        /// btnRegister control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::System.Web.UI.WebControls.Button btnRegister;
 
         /// <summary>
         /// btnReset control.
@@ -114,22 +114,22 @@ namespace GridView_Task
         protected global::System.Web.UI.WebControls.Button btnReset;
 
         /// <summary>
-        /// btnRegister control.
+        /// btnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegister;
+        protected global::System.Web.UI.WebControls.Button btnLogin;
 
         /// <summary>
-        /// vsLogin control.
+        /// vsRegister control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary vsLogin;
+        protected global::System.Web.UI.WebControls.ValidationSummary vsRegister;
 
         /// <summary>
         /// lblMessage control.
