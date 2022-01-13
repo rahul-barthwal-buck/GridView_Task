@@ -18,12 +18,15 @@ namespace GridView_Task
         private DataSet dataSet;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //First checking whether the Session of Key UserName is null or not
             if(Session["UserName"]!=null)
             {
+                //If not null then assign Session value of Key UserName in Label to display UserName
                 lblUserName.Text = (string)Session["UserName"];
             }
             else
             {
+                //If Session with Key UserName is null then redirect it to Login page
                 Response.Redirect("Login.aspx");
             }
             // It indicates whether the page is being rendered for the first time or is being loaded in response to a postback.
@@ -355,8 +358,11 @@ namespace GridView_Task
         }
         protected void btnLogout_Click(object sender, EventArgs e)
         {
+            //First checking whether the Session with Key UserName is Null or not
             if(Session["UserName"]!=null)
             {
+                //If not null then null the value in Session with key UserName
+                //And Also null the Session with key SortedView which is used to stored DataView object for sorting and paging
                 Session["UserName"] = null;
                 Session["SortedView"] = null;
                 Response.Redirect("Login.aspx");

@@ -41,12 +41,15 @@ namespace GridView_Task
         {
             sqlCommand.Connection.Dispose();
         }
+
+        //This event handler works when user clicks on Login button
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
                 if (Page.IsValid)
                 {
+                    //First checking whether the UserName exist or not
                     CreateConnection();
                     OpenConnection();
 
@@ -60,6 +63,7 @@ namespace GridView_Task
                     {
                         CloseConnection();
 
+                        //If UserName exists then Checking the password associated with UserName is correct or not
                         CreateConnection();
                         OpenConnection();
                         sqlCommand.CommandText = "sp_Login";
@@ -70,6 +74,8 @@ namespace GridView_Task
                         int resultPwd = Convert.ToInt32(sqlCommand.ExecuteScalar().ToString());
                         if (resultPwd == 1)
                         {
+                            //If Password associated with UserName is correct then stores the UserName in the Session
+                            //and then redirect it to Index Page
                             CloseConnection();
                             DisposeConnection();
                             Session["UserName"] = txtUserName.Text.Trim();
