@@ -13,7 +13,7 @@ Functionality in this application:
 8. Login and Logout with Session
 9. Register user
 
-Tool used:
+Tools used:
 1. Visual Studio Professional 2019
 2. MS SQL Server 2018
 
