@@ -10,6 +10,7 @@ Functionality in this application:
 5. Search
 6. Sorting
 7. Pagination
+8. Login and Logout with Session
 
 Tool used:
 1. Visual Studio Professional 2019
