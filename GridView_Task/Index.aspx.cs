@@ -18,6 +18,14 @@ namespace GridView_Task
         private DataSet dataSet;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["UserName"]!=null)
+            {
+                lblUserName.Text = (string)Session["UserName"];
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
             // It indicates whether the page is being rendered for the first time or is being loaded in response to a postback.
             if (!Page.IsPostBack)
             {
@@ -343,6 +351,15 @@ namespace GridView_Task
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            if(Session["UserName"]!=null)
+            {
+                Session["UserName"] = null;
+                Session["SortedView"] = null;
+                Response.Redirect("Login.aspx");
             }
         }
     }

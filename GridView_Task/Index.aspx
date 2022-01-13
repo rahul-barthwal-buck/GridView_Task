@@ -8,29 +8,45 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet" />
-
 </head>
 <body>
     <form id="form1" runat="server">
        <div class="container">
-        <h1 class="display-3">Product Details</h1>
-        <h3 class="h4">Search</h3>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h1 class="display-3">Product Details</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <asp:Label ID="lblUser" runat="server" Text="User:" CssClass="h5"></asp:Label>&nbsp;
+                 <asp:Label ID="lblUserName" runat="server" CssClass="h5 text-success"></asp:Label>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <asp:Button ID="btnLogout" runat="server" Text="Logout" ToolTip="Click here to Logout" CssClass="btn btn-secondary" OnClick="btnLogout_Click" />
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+             <h3 class="h4">Search</h3>
         <asp:TextBox ID="txtSearch" runat="server" placeholder="Search Product" TextMode="Search"></asp:TextBox>
         <asp:Button CssClass="btn btn-info" ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" ToolTip="Click here to search the record" />
+        </div>
         <br />
         <br />
-        <asp:Table runat="server" CssClass="table table-borderless InsertUpdate">
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="lblName" runat="server" Text="Product Name"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell>
-                     <asp:TextBox ID="txtProductName" runat="server" placeholder="Enter the Product Name"></asp:TextBox>
-                     <asp:RequiredFieldValidator ID="rvfProductName" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Product Name is required, cannot be blank" Text="*" ControlToValidate="txtProductName" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
-                     <asp:RegularExpressionValidator ID="regexProductName" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Product Name Should Contain Characters and Numbers only or should be greater than 3 and less than or equal 30 Characters" Text="*" ControlToValidate="txtProductName" ValidationExpression="(?!^[0-9]*$)^([0-9a-zA-Z\s]{3,30})$" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
+       <div class="row">
+           <div class="col-lg-12 col-md-12 col-sm-12">
+                <asp:Table runat="server" CssClass="table table-borderless InsertUpdate">
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="lblName" runat="server" Text="Product Name"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                         <asp:TextBox ID="txtProductName" runat="server" placeholder="Enter the Product Name"></asp:TextBox>
+                         <asp:RequiredFieldValidator ID="rvfProductName" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Product Name is required, cannot be blank" Text="*" ControlToValidate="txtProductName" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                         <asp:RegularExpressionValidator ID="regexProductName" runat="server" ValidationGroup="InsertUpdate" ErrorMessage="Product Name Should Contain Characters and Numbers only or should be greater than 3 and less than or equal 30 Characters" Text="*" ControlToValidate="txtProductName" ValidationExpression="(?!^[0-9]*$)^([0-9a-zA-Z\s]{3,30})$" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
                 <asp:TableCell>
                      <asp:Label ID="lblQuantityPerUnit" runat="server" Text="Quantity Per Unit"></asp:Label>
                 </asp:TableCell>
@@ -69,10 +85,26 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-        <asp:ValidationSummary CssClass="alert alert-danger" ID="ValidationSummary1" runat="server" ValidationGroup="InsertUpdate" ForeColor="Red" />
-        <asp:Label ID="lblMessage" ForeColor="Red" runat="server"></asp:Label>
+           </div>
+       </div>
+       <div class="row">
+           <div class="col-lg-12 col-md-6 col-sm-6">
+               <div class="row">
+                   <div class="col-lg-12 col-md-6 col-sm-6">
+                        <asp:ValidationSummary CssClass="alert alert-danger" ID="ValidationSummary1" runat="server" ValidationGroup="InsertUpdate" ForeColor="Red" />
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-lg-12 col-md-6 col-sm-6">
+                       <asp:Label ID="lblMessage" ForeColor="Red" runat="server"></asp:Label>
+                   </div>
+               </div>
+           </div>
+       </div>    
         <br />
-        <asp:GridView CssClass="table table-hover table-bordered table-light" ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="5" CellSpacing="5"
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-md-12">
+                <asp:GridView CssClass="table table-hover table-bordered table-light" ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="5" CellSpacing="5"
             PageSize="5" OnRowEditing="grid_EditRow"  OnRowDeleting="grid_DeleteRow" OnPageIndexChanging="grid_PageIndexChanging" OnSorting="grid_Sorting"> <%--OnRowCancelingEdit="grid_EditCancelRow"--%>
             <Columns>
                 <asp:TemplateField HeaderText="Product Id" HeaderStyle-CssClass="hiddenId" ItemStyle-CssClass="hiddenId">
@@ -112,6 +144,8 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
+            </div>
+        </div>
        </div>
     </form>
 </body>

@@ -1,13 +1,27 @@
-﻿.hiddenId {
+﻿.hiddenId 
+{
     display: none;
 }
-.InsertUpdate{
+.InsertUpdate
+{
     width:500px;
 }
-a{
+a
+{
     text-decoration:none;
     color:black;
 }
-a:hover{
+a:hover
+{
     color:brown;
+}
+.LoginTable
+{
+    width:500px;
+}
+.LoginTable tbody tr td {
+        width: 200px;
+    }
+.LoginValidation {
+    width: 500px;
 }
