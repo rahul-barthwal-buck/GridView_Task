@@ -72,11 +72,11 @@ namespace GridView_Task
             }
            else
             {
-                CloseConnection();
-                DisposeConnection();
                 Response.Redirect("ForgetPassword.aspx");
             }
-           
+            CloseConnection();
+            DisposeConnection();
+
         }
         protected void btnResetPwd_Click(object sender, EventArgs e)
         {

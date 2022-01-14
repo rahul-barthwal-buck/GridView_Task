@@ -120,6 +120,7 @@ namespace GridView_Task
         protected void btnForget_Click(object sender, EventArgs e)
         {
             Response.Redirect("ForgetPassword.aspx");
+            
         }
     }
 }
