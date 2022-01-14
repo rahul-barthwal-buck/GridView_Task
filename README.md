@@ -12,6 +12,7 @@ Functionality in this application:
 7. Pagination
 8. Login and Logout with Session
 9. Register user
+10. Forget Password and Reset Password 
 
 Tools used:
 1. Visual Studio Professional 2019
