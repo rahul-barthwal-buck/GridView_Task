@@ -45,7 +45,8 @@
                                 <asp:TableCell ColumnSpan="2">
                                     <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-success" ValidationGroup="Login" OnClick="btnLogin_Click" />&nbsp;
                                     <asp:Button ID="btnReset" runat="server" Text="Reset" CssClass="btn btn-primary" OnClick="btnReset_Click" />&nbsp;
-                                     <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn btn-secondary" OnClick="btnRegister_Click" />
+                                     <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn btn-secondary" OnClick="btnRegister_Click" />&nbsp;
+                                    <asp:Button ID="btnForgetPassword" runat="server" CssClass="btn btn-primary" OnClick="btnForget_Click" Text="Forget Password"/>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>

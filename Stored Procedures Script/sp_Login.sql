@@ -1,12 +1,12 @@
 /*Author name: Rahul Barthwal*/
-/*Objective: Creation of Stored procedure for login*/
+/*Objective: Creation of Login Stored Procedure*/
 
 USE [GridView_Task]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_Login]    Script Date: 1/13/2022 5:10:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_Login]    Script Date: 1/14/2022 6:47:01 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[sp_Login]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_Login]    Script Date: 1/13/2022 5:10:59 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_Login]    Script Date: 1/14/2022 6:47:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON

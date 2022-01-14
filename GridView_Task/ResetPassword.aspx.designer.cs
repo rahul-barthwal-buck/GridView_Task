@@ -11,7 +11,7 @@ namespace GridView_Task
 {
 
 
-    public partial class Login
+    public partial class ResetPassword
     {
 
         /// <summary>
@@ -24,85 +24,94 @@ namespace GridView_Task
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblUserName control.
+        /// lblNewPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserName;
+        protected global::System.Web.UI.WebControls.Label lblNewPassword;
 
         /// <summary>
-        /// txtUserName control.
+        /// txtNewPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserName;
+        protected global::System.Web.UI.WebControls.TextBox txtNewPassword;
 
         /// <summary>
-        /// rvfUserName control.
+        /// rvfNewPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvfUserName;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvfNewPassword;
 
         /// <summary>
-        /// regexUserName control.
+        /// regexNewPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexUserName;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexNewPassword;
 
         /// <summary>
-        /// lblPassword control.
+        /// lblVerifyPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPassword;
+        protected global::System.Web.UI.WebControls.Label lblVerifyPassword;
 
         /// <summary>
-        /// txtPassword control.
+        /// txtVerifyPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtVerifyPassword;
 
         /// <summary>
-        /// rvfPassword control.
+        /// rvfVerifyPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvfPassword;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvfVerifyPassword;
 
         /// <summary>
-        /// regexPassword control.
+        /// regexVerifyPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexPassword;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexVerifyPassword;
 
         /// <summary>
-        /// btnLogin control.
+        /// passwordCompareValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::System.Web.UI.WebControls.CompareValidator passwordCompareValidator;
+
+        /// <summary>
+        /// btnResetPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnResetPassword;
 
         /// <summary>
         /// btnReset control.
@@ -114,31 +123,22 @@ namespace GridView_Task
         protected global::System.Web.UI.WebControls.Button btnReset;
 
         /// <summary>
-        /// btnRegister control.
+        /// btnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegister;
+        protected global::System.Web.UI.WebControls.Button btnLogin;
 
         /// <summary>
-        /// btnForgetPassword control.
+        /// vsRegister control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnForgetPassword;
-
-        /// <summary>
-        /// vsLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary vsLogin;
+        protected global::System.Web.UI.WebControls.ValidationSummary vsRegister;
 
         /// <summary>
         /// lblMessage control.

@@ -28,7 +28,15 @@
                                 <asp:TableCell>
                                     <asp:TextBox ID="txtUserName" runat="server" placeholder="Enter UserName"></asp:TextBox>&nbsp;
                                      <asp:RequiredFieldValidator ID="rvfUserName" runat="server" ValidationGroup="Register" ErrorMessage="User Name is required, cannot be blank" Text="*" ControlToValidate="txtUserName" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
-                                     <asp:RegularExpressionValidator ID="regexUserName" runat="server" ValidationGroup="Register" ErrorMessage="User Name Should Contain Characters and Numbers only or should be greater than 3 and less than or equal 20 Characters" Text="*" ControlToValidate="txtUserName" ValidationExpression="(?!^[0-9]*$)^([0-9a-zA-Z]{3,20})$" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
+                                     <asp:RegularExpressionValidator ID="regexUserName" runat="server" ValidationGroup="Register" ErrorMessage="User Name Should Contain Characters and Numbers only or should be greater than 3 and less than or equal 20 Characters" Text="*" ControlToValidate="txtUserName" ValidationExpression="(?!^[0-9]*$)^([0-9a-zA-Z]{3,20})$" Display="Dynamic" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell><asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label></asp:TableCell>
+                                <asp:TableCell>
+                                    <asp:TextBox ID="txtEmail" ClientIDMode="Static" runat="server" placeholder="Enter Email"></asp:TextBox>&nbsp;
+                                     <asp:RequiredFieldValidator ID="reqEmailValidator" runat="server" ValidationGroup="Register" ErrorMessage="Email is required, can't be blank" ControlToValidate="txtEmail" ForeColor="Red" Text="*" SetFocusOnError="true" Display="Dynamic"></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator runat="server" ErrorMessage="Email is not valid or Should be less than or equal to 38 Characters" ValidationGroup="Register" ValidationExpression="^[a-zA-Z]{1}[a-zA-Z0-9.]{1,20}[@]{1}[a-zA-Z]{2,10}[.]{1}[a-zA-Z]{2,5}$" ControlToValidate="txtEmail" ForeColor="Red" Text="*" SetFocusOnError="true" Display="Dynamic"></asp:RegularExpressionValidator>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
@@ -38,7 +46,18 @@
                                 <asp:TableCell>
                                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Enter Password"></asp:TextBox>&nbsp;
                                      <asp:RequiredFieldValidator ID="rvfPassword" runat="server" ValidationGroup="Register" ErrorMessage="Password is required, cannot be blank" Text="*" ControlToValidate="txtPassword" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
-                                     <asp:RegularExpressionValidator ID="regexPassword" runat="server" ValidationGroup="Register" ControlToValidate="txtPassword"  ErrorMessage="Password should be minimum of 8 and maximum of 16 characters long and should contain at least one number, atleast one lowercase letter , atleast one uppercase letter" Text="*" ValidationExpression="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,16})$" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
+                                     <asp:RegularExpressionValidator ID="regexPassword" runat="server" ValidationGroup="Register" ControlToValidate="txtPassword"  ErrorMessage="Password should be minimum of 8 and maximum of 16 characters long and should contain at least one number, atleast one lowercase letter , atleast one uppercase letter" Text="*" Display="Dynamic" ValidationExpression="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,16})$" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                             <asp:TableRow>
+                                 <asp:TableCell>
+                                   <asp:Label ID="lblConfirmPassword" runat="server" Text="Confirm Password"></asp:Label>
+                               </asp:TableCell>
+                                <asp:TableCell>
+                                    <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" placeholder="Enter New Password"></asp:TextBox>&nbsp;
+                                     <asp:RequiredFieldValidator ID="rvfVerifyPassword" runat="server" ValidationGroup="Register" ErrorMessage=" Veify Password is required, cannot be blank" Text="*" ControlToValidate="txtConfirmPassword" ForeColor="Red" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                                     <asp:RegularExpressionValidator ID="regexVerifyPassword" runat="server" ValidationGroup="Register" ControlToValidate="txtConfirmPassword"  ErrorMessage=" Confirm Password should be minimum of 8 and maximum of 16 characters long and should contain at least one number, atleast one lowercase letter , atleast one uppercase letter" Text="*" Display="Dynamic" ValidationExpression="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,16})$" ForeColor="Red" SetFocusOnError="true"></asp:RegularExpressionValidator>
+                                     <asp:CompareValidator ID="passwordCompareValidator" runat="server" ErrorMessage="Confirm Password does not match" ValidationGroup="Register" ControlToValidate="txtPassword" ControlToCompare="txtConfirmPassword" ForeColor="Red" Text="*" SetFocusOnError="true" Display="Dynamic"></asp:CompareValidator>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>

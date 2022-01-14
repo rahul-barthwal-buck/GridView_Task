@@ -54,6 +54,7 @@ namespace GridView_Task
                     sqlCommand.CommandText = "sp_Register";
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.Parameters.AddWithValue("@UserName", txtUserName.Text.Trim());
+                    sqlCommand.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                     sqlCommand.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
                     int result = Convert.ToInt32(sqlCommand.ExecuteNonQuery());
                     if (result > 0)

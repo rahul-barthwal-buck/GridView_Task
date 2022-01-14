@@ -84,16 +84,14 @@ namespace GridView_Task
                         }
                         else
                         {
-                            lblMessage.Text = "Password is incorrect!";
-                            lblMessage.ForeColor = System.Drawing.Color.Red;
+                            Response.Write("<script>alert('Password is incorrect');</script>");
                             CloseConnection();
                             DisposeConnection();
                         }
                     }
                     else
                     {
-                        lblMessage.Text = "UserName does not exists!";
-                        lblMessage.ForeColor = System.Drawing.Color.Red;
+                        Response.Write("<script>alert('UserName does not exist!');</script>");
                     }
                     DisposeConnection();
                 }
@@ -118,6 +116,10 @@ namespace GridView_Task
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             Response.Redirect("Register.aspx");
+        }
+        protected void btnForget_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForgetPassword.aspx");
         }
     }
 }

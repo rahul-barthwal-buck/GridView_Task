@@ -15,12 +15,12 @@ a:hover
 {
     color:brown;
 }
-.LoginTable, .RegisterTable {
+.LoginTable, .RegisterTable, .ForgetTable {
     width: 500px;
 }
-.LoginTable tbody tr td, .RegisterTable tbody tr td {
+    .LoginTable tbody tr td, .RegisterTable tbody tr td, .ForgetTable tbody tr td {
         width: 200px;
     }
-.LoginValidation, .RegisterValidation {
+.LoginValidation, .RegisterValidation, .ForgetValidation {
     width: 500px;
 }

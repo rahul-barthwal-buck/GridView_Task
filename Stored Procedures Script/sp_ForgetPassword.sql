@@ -1,24 +1,32 @@
 /*Author name: Rahul Barthwal*/
-/*Objective: Creation of Resgiter user Stored Procedure*/
+/*Objective: Creation of ForgetPassword Stored Procedure*/
 
 USE [GridView_Task]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_Register]    Script Date: 1/14/2022 6:49:48 PM ******/
-DROP PROCEDURE IF EXISTS [dbo].[sp_Register]
+/****** Object:  StoredProcedure [dbo].[sp_ForgetPassword]    Script Date: 1/14/2022 6:45:37 PM ******/
+DROP PROCEDURE IF EXISTS [dbo].[sp_ForgetPassword]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_Register]    Script Date: 1/14/2022 6:49:48 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_ForgetPassword]    Script Date: 1/14/2022 6:45:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE PROCEDURE [dbo].[sp_Register]
-@UserName NVARCHAR(20),
-@Email NVARCHAR(38),
-@Password NVARCHAR(16)
-AS 
+CREATE   PROCEDURE [dbo].[sp_ForgetPassword]
+@Email NVARCHAR(38) = NULL,
+@NewPassword NVARCHAR(16) = NULL,
+@UserId INT = 0,
+@Event NVARCHAR(15)
+AS
 BEGIN
 	BEGIN TRY
-		INSERT INTO tbl_User(UserName,Email,Password) VALUES(@UserName,@Email,@Password)
+     IF(@Event='CheckEmail')
+	 BEGIN
+		SELECT * FROM tbl_User WHERE Email = @Email
+	 END
+	 IF(@Event='ChangePassword')
+	 BEGIN
+		UPDATE tbl_User SET Password = @NewPassword WHERE UserId = @UserId
+	 END
 	END TRY
 	BEGIN CATCH
 		DECLARE @ErrorNumber    INT          = ERROR_NUMBER()

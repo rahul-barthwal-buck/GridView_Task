@@ -88,15 +88,10 @@
            </div>
        </div>
        <div class="row">
-           <div class="col-lg-12 col-md-6 col-sm-6">
+           <div class="col-lg-12 col-md-12 col-sm-12">
                <div class="row">
                    <div class="col-lg-12 col-md-6 col-sm-6">
                         <asp:ValidationSummary CssClass="alert alert-danger" ID="ValidationSummary1" runat="server" ValidationGroup="InsertUpdate" ForeColor="Red" />
-                   </div>
-               </div>
-               <div class="row">
-                   <div class="col-lg-12 col-md-6 col-sm-6">
-                       <asp:Label ID="lblMessage" ForeColor="Red" runat="server"></asp:Label>
                    </div>
                </div>
            </div>

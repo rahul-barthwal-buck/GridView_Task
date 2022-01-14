@@ -1,12 +1,12 @@
 /*Author name: Rahul Barthwal*/
-/*Objective: Creation of Stored Procedure for ProductDetails*/
+/*Objective: Creation of ProductDetails Stored Procedure*/
 
 USE [GridView_Task]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_ProductDetails_GridView]    Script Date: 1/13/2022 5:12:49 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_ProductDetails_GridView]    Script Date: 1/14/2022 6:48:24 PM ******/
 DROP PROCEDURE IF EXISTS [dbo].[sp_ProductDetails_GridView]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_ProductDetails_GridView]    Script Date: 1/13/2022 5:12:49 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_ProductDetails_GridView]    Script Date: 1/14/2022 6:48:24 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON

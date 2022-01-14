@@ -180,15 +180,13 @@ namespace GridView_Task
                     int result = Convert.ToInt32(sqlCommand.ExecuteNonQuery());
                     if (result > 0)
                     {
-                        lblMessage.Text = "Record Inserted Successfully...";
-                        lblMessage.ForeColor = System.Drawing.Color.Green;
+                        Response.Write("<script>alert('Product details inserted successfully...');</script>");
                         BindProductDetails();
                         ClearControls();
                     }
                     else
                     {
-                        lblMessage.Text = "Failed!";
-                        lblMessage.ForeColor = System.Drawing.Color.Red;
+                        Response.Write("<script>alert('Failed to insert Product Details!');</script>");
                     }
                 }
             }
@@ -256,8 +254,7 @@ namespace GridView_Task
                     int result = Convert.ToInt32(sqlCommand.ExecuteNonQuery());
                     if (result > 0)
                     {
-                        lblMessage.Text = "Record Updated Successfully...";
-                        lblMessage.ForeColor = System.Drawing.Color.Green;
+                        Response.Write("<script>alert('Product details updated successfully...');</script>");
                         GridView1.EditIndex = -1;
                         BindProductDetails();
                         ClearControls();
@@ -267,8 +264,7 @@ namespace GridView_Task
                     }
                     else
                     {
-                        lblMessage.Text = "Failed!";
-                        lblMessage.ForeColor = System.Drawing.Color.Red;
+                        Response.Write("<script>alert('Failed to update product details');</script>");
                     }
                     CloseConnection();
                     DisposeConnection();
@@ -309,15 +305,13 @@ namespace GridView_Task
                 if (result > 0)
                 {
 
-                    lblMessage.Text = "Record Deleted Successfully...";
-                    lblMessage.ForeColor = System.Drawing.Color.Green;
+                    Response.Write("<script>alert('Product Details deleted successfully...');</script>");
                     GridView1.EditIndex = -1;
                     BindProductDetails();
                 }
                 else
                 {
-                    lblMessage.Text = "Failed";
-                    lblMessage.ForeColor = System.Drawing.Color.Red;
+                    Response.Write("<script>alert('Failed to delete product details');</script>");
                     BindProductDetails();
                 }
                 CloseConnection();
@@ -349,7 +343,6 @@ namespace GridView_Task
                 CloseConnection();
                 DisposeConnection();
                 txtSearch.Text = "";
-                lblMessage.Text = "";
             }
             catch (Exception ex)
             {

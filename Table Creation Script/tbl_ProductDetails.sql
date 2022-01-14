@@ -3,10 +3,10 @@
 
 USE [GridView_Task]
 GO
-/****** Object:  Table [dbo].[tbl_ProductDetails]    Script Date: 1/13/2022 5:06:47 PM ******/
+/****** Object:  Table [dbo].[tbl_ProductDetails]    Script Date: 1/14/2022 6:41:02 PM ******/
 DROP TABLE IF EXISTS [dbo].[tbl_ProductDetails]
 GO
-/****** Object:  Table [dbo].[tbl_ProductDetails]    Script Date: 1/13/2022 5:06:47 PM ******/
+/****** Object:  Table [dbo].[tbl_ProductDetails]    Script Date: 1/14/2022 6:41:02 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -24,10 +24,6 @@ CREATE TABLE [dbo].[tbl_ProductDetails](
 ) ON [PRIMARY]
 GO
 SET IDENTITY_INSERT [dbo].[tbl_ProductDetails] ON 
-GO
-INSERT [dbo].[tbl_ProductDetails] ([Product_Id], [Name], [Quantity_Per_Unit], [Unit_Price], [Units_In_Stock]) VALUES (8, N'One Plus 8 Pro', 30, CAST(750.00 AS Decimal(12, 2)), 26)
-GO
-INSERT [dbo].[tbl_ProductDetails] ([Product_Id], [Name], [Quantity_Per_Unit], [Unit_Price], [Units_In_Stock]) VALUES (9, N'IPhone 13 Max Pro', 21, CAST(1500.00 AS Decimal(12, 2)), 16)
 GO
 INSERT [dbo].[tbl_ProductDetails] ([Product_Id], [Name], [Quantity_Per_Unit], [Unit_Price], [Units_In_Stock]) VALUES (11, N'Realme X2 pro', 24, CAST(450.00 AS Decimal(12, 2)), 10)
 GO
